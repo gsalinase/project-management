@@ -1,0 +1,26 @@
+<div class="pt-5">
+  <h1>Crear Nuevo Proyecto</h1>
+  <%= form_with(url: "/projects/create", method: "get" ) do %>
+  <div class="form-group">
+    <%= label_tag :name, "Nombre de Proyecto" %>
+    <%= text_field_tag 'name', nil, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :description, "Descripcion" %>
+    <%= text_field_tag 'description', nil, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :start, "Inicio Proyecto" %>
+    <%= text_field_tag 'start', nil, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :finish, "Termino Proyecto" %>
+    <%= text_field_tag 'finish', nil, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :state, "Termino Proyecto" %>
+    <%= select_tag :state, options_for_select([[ "Propuesta", "proposal" ], ["En Progreso", "inprogress"], ["Terminado", "finished"]]), class: "form-control" %>
+  </div>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+</div>
