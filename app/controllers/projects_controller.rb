@@ -6,13 +6,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(name: params[:name], description: params[:description], start: params[:start], finish: params[:finish], state: params[:state])
-    if @project.save
-      flash[:success] = "El proyecto ha sido creado correctamente."
-      redirect_to root_path
-    else
-      flash[:error] = "Hubo un error al crear el proyecto. Intenta nuevamente."
-      redirect_to root_path
-    end
+    @project.save
   end
 
   def dashboard
