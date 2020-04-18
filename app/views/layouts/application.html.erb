@@ -21,12 +21,8 @@
 </head>
 
 <body>
+  <%= render "shared/navbar" %>
   <div class="container">
-    <% flash.each do |type, msg| %>
-    <div class="alert alert-info">
-      <%= msg %>
-    </div>
-    <% end %>
     <%= yield %>
   </div>
 </body>
